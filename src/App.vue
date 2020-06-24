@@ -1,6 +1,8 @@
 <template>
   <div>
-    NavBa
+    <NavBar />
+    <Projects />
+    <About />
   </div>
 </template>
 
@@ -9,5 +11,12 @@ import NavBar from './components/NavBar'
 import Projects from './components/Projects'
 import About from './components/About'
 
-export default {}
+export default {
+  name: 'app',
+  components: {
+    NavBar,
+    Projects,
+    About
+  }
+}
 </script>

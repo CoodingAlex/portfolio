@@ -20,7 +20,7 @@ export default {
   justify-content: space-around;
   padding: 0 50px;
   align-items: center;
-  background-color: black;
+  background-color: #171a23;
   height: 400px;
 }
 .js__image {

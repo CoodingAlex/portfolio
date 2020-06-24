@@ -3,7 +3,7 @@
     <div class="container">
       <div class="projects__container">
         <div class="project__description">
-          <h1>Proyecto</h1>
+          <h1 class="project__description__title">Proyecto</h1>
           <span
             >Lorem ipsum dolor sit amet consectetur, adipisicing elit. Dolores
             labore quam quibusdam officia reprehenderit optio non, odio minima,
@@ -26,9 +26,13 @@ export default {
 </script>
 
 <style scoped>
+.project__description__title {
+  color: #44bb81;
+}
 .container {
   margin: 30px 50px;
-  background: black;
+  background-color: #171a23;
+  box-shadow: #44bb81 0px 0px 10px;
 }
 .projects__container {
   display: flex;

@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="home">
     <nav-bar />
     <about />
     <projects />
@@ -20,3 +20,9 @@ export default {
   }
 }
 </script>
+
+<style scoped>
+.home {
+  background-color: #0f1218;
+}
+</style>

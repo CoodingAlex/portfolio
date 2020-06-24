@@ -35,9 +35,10 @@ export default {
 .container {
   display: flex;
   justify-content: space-between;
-  background: black;
+  background-color: #171a23;
   margin: 30px 50px;
   color: whitesmoke;
+  box-shadow: #44bb81 0px 0px 10px;
 }
 
 @keyframes about-entry {
@@ -60,9 +61,10 @@ export default {
 }
 
 .about__text__content {
-  font-size: 25px;
+  font-size: 20px;
 }
 .about__text__title {
   font-size: 35px;
+  color: #44bb81;
 }
 </style>

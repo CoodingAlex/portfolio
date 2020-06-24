@@ -1,22 +1,24 @@
 <template>
   <div>
-    <NavBar />
-    <Projects />
-    <About />
+    <home />
   </div>
 </template>
 
 <script>
-import NavBar from './components/NavBar'
-import Projects from './components/Projects'
-import About from './components/About'
+import Home from './views/Home'
 
 export default {
   name: 'app',
   components: {
-    NavBar,
-    Projects,
-    About
+    Home
   }
 }
 </script>
+
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@500&display=swap');
+body {
+  margin: 0;
+  padding: 0;
+}
+</style>

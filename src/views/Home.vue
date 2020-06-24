@@ -1,8 +1,8 @@
 <template>
   <div>
     <nav-bar />
-    <projects />
     <about />
+    <projects />
   </div>
 </template>
 

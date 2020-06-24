@@ -8,19 +8,10 @@
           <hr />
         </h1>
 
-        <span class="about__text__content"
-          >Lorem ipsum dolor sit amet consectetur adipisicing elit. Excepturi
-          iste ipsa nisi nam delectus ab dolorem exercitationem repudiandae
-          autem similique. Maxime quos necessitatibus assumenda deleniti
-          dignissimos, esse doloremque consequuntur dicta!Repellendus aspernatur
-          repellat perspiciatis vel, iure quod. Aperiam quos iste, modi hic
-          aliquid sapiente, fugit totam quia nesciunt, officia exercitationem
-          pariatur sunt dolore nostrum molestias dolor architecto at expedita
-          sit.</span
-        >
+        <span class="about__text__content">{{ aboutContent.data }}</span>
       </div>
       <div class="about__img__container">
-        <img src="../assets/mi_cara.png" class="about__img" alt="" />
+        <img :src="aboutContent.img" class="about__img" alt="" />
       </div>
     </div>
     <div></div>
@@ -28,8 +19,22 @@
 </template>
 
 <script>
+import AboutData from '../aboutMock'
 export default {
-  name: 'about'
+  name: 'about',
+  data() {
+    return {
+      aboutContent: ''
+    }
+  },
+  methods: {
+    async getAboutContent() {
+      this.aboutContent = await AboutData
+    }
+  },
+  created() {
+    this.getAboutContent()
+  }
 }
 </script>
 

@@ -2,35 +2,47 @@
   <div class="container">
     <div class="title__projects">
       <h1>
-        My projects
+        Projects
         <hr />
       </h1>
     </div>
-    <div class="projects__container">
+    <div
+      v-for="p in projects"
+      :key="p.id"
+      :class="p.left ? 'project__container left' : 'project__container right'"
+    >
       <div class="project__description">
-        <h1 class="project__description__title">Proyecto</h1>
-        <span
-          >Lorem ipsum dolor sit amet consectetur, adipisicing elit. Dolores
-          labore quam quibusdam officia reprehenderit optio non, odio minima,
-          ipsa suscipit doloremque temporibus quis molestias, tenetur sint
-          sapiente ducimus beatae corrupti.</span
-        >
+        <h1 class="project__description__title">{{ p.title }}</h1>
+        <span>{{ p.content }}</span>
       </div>
       <div class="project__img__container">
-        <img src="../assets/logoJs.png" class="project__img" alt="" />
+        <img :src="p.img" class="project__img" alt="" />
       </div>
     </div>
   </div>
 </template>
 
 <script>
-// import Projects from '../projectsMocks'
+import Projects from '../projectsMocks'
 export default {
   name: 'projects',
   data() {
     return {
       projects: []
     }
+  },
+  methods: {
+    async getProjects() {
+      const data = await Projects
+      let bool = false
+      this.projects = data.map(p => {
+        bool = !bool
+        return { ...p, left: !bool }
+      })
+    }
+  },
+  created() {
+    this.getProjects()
   }
 }
 </script>
@@ -55,10 +67,19 @@ hr {
   color: #5e5e5e;
   background-color: #ffffff;
 }
-.projects__container {
+
+.left {
+  flex-direction: row;
+}
+
+.right {
+  flex-direction: row-reverse;
+}
+
+.project__container {
   display: flex;
+  margin: 100px 0;
   justify-content: space-between;
-  /* grid-template-columns: 2fr 1fr; */
   grid-column: 2;
   color: #5e5e5e;
   justify-content: space-between;

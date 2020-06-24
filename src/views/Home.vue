@@ -12,7 +12,7 @@ import Projects from '../components/Projects'
 import About from '../components/About'
 
 export default {
-  name: 'main',
+  name: 'Home',
   components: {
     NavBar,
     Projects,

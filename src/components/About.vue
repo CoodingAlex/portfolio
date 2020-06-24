@@ -1,8 +1,13 @@
 <template>
   <div class="about">
+    <div></div>
     <div class="container">
       <div class="about__text">
-        <h1 class="about__text__title">About Me</h1>
+        <h1 class="about__text__title">
+          About Me
+          <hr />
+        </h1>
+
         <span class="about__text__content"
           >Lorem ipsum dolor sit amet consectetur adipisicing elit. Excepturi
           iste ipsa nisi nam delectus ab dolorem exercitationem repudiandae
@@ -18,6 +23,7 @@
         <img src="../assets/mi_cara.png" class="about__img" alt="" />
       </div>
     </div>
+    <div></div>
   </div>
 </template>
 
@@ -28,32 +34,25 @@ export default {
 </script>
 
 <style scoped>
-.about {
-  animation-name: about-entry;
-  animation-duration: 1s;
-}
-.container {
-  display: flex;
-  justify-content: space-between;
-  background-color: #171a23;
-  margin: 30px 50px;
-  color: whitesmoke;
-  box-shadow: #44bb81 0px 0px 10px;
+hr {
+  border: 2px solid #f6f6f6;
 }
 
-@keyframes about-entry {
-  from {
-    margin-right: 900px;
-  }
-  to {
-    margin-right: initial;
-  }
+.about {
+  display: grid;
+  grid-template-columns: 1fr 2fr 1fr;
+}
+.container {
+  margin: 150px 0;
+  border-radius: 2px;
+  background-color: #ffffff;
+  color: #5e5e5e;
 }
 
 .about__text {
   display: flex;
   flex-direction: column;
-  font-family: 'Roboto', sans-serif;
+  font-family: 'Merriweather', serif;
   margin: 30px;
 }
 .about__img {
@@ -61,10 +60,11 @@ export default {
 }
 
 .about__text__content {
-  font-size: 20px;
+  font-size: 15px;
+  line-height: 30px;
 }
 .about__text__title {
   font-size: 35px;
-  color: #44bb81;
+  color: #13152c;
 }
 </style>

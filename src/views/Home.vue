@@ -23,6 +23,8 @@ export default {
 
 <style scoped>
 .home {
-  background-color: #0f1218;
+  /* background-color: #0f1218; */
+  /* background-color: #f4f6f9; */
+  background-color: #ffffff;
 }
 </style>

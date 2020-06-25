@@ -8,10 +8,14 @@
           <hr />
         </h1>
 
-        <span class="about__text__content">{{ aboutContent.data }}</span>
+        <span class="about__text__content">{{ aboutContent }}</span>
       </div>
       <div class="about__img__container">
-        <img :src="aboutContent.img" class="about__img" alt="" />
+        <img
+          src="https://res.cloudinary.com/dcoxmw8gn/image/upload/v1593036511/mi_cara_editada_ibtej4.png"
+          class="about__img"
+          alt=""
+        />
       </div>
     </div>
     <div></div>
@@ -19,7 +23,7 @@
 </template>
 
 <script>
-import AboutData from '../aboutMock'
+import { getAbout } from '../api'
 export default {
   name: 'about',
   data() {
@@ -29,7 +33,8 @@ export default {
   },
   methods: {
     async getAboutContent() {
-      this.aboutContent = await AboutData
+      const { data } = await getAbout()
+      this.aboutContent = data
     }
   },
   created() {

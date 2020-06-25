@@ -12,7 +12,9 @@
       :class="p.left ? 'project__container left' : 'project__container right'"
     >
       <div class="project__description">
-        <h1 class="project__description__title">{{ p.title }}</h1>
+        <h1 class="project__description__title">
+          <a :href="p.url"> {{ p.title }}</a>
+        </h1>
         <span>{{ p.content }}</span>
       </div>
       <div class="project__img__container">
@@ -23,7 +25,7 @@
 </template>
 
 <script>
-import Projects from '../projectsMocks'
+import { getProjects } from '../api'
 export default {
   name: 'projects',
   data() {
@@ -33,7 +35,12 @@ export default {
   },
   methods: {
     async getProjects() {
-      const data = await Projects
+      let { data } = await getProjects()
+      console.log(data)
+
+      if (!data) {
+        data = []
+      }
       let bool = false
       this.projects = data.map(p => {
         bool = !bool
@@ -48,6 +55,10 @@ export default {
 </script>
 
 <style scoped>
+a {
+  text-decoration: none;
+  color: #13152c;
+}
 .title__projects {
   font-size: 35px;
   color: #13152c;

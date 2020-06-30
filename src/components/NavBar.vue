@@ -1,5 +1,5 @@
 <template>
-  <div class="container">
+  <div class="nav-container">
     <img src="../assets/logoJs.png" class="js__image" alt="" />
     <div class="deader__title">
       <span class="header__title__header">Hey I’m Alex</span><br />
@@ -17,7 +17,7 @@ export default {
 </script>
 
 <style scoped>
-.container {
+.nav-container {
   display: flex;
   justify-content: space-around;
   padding: 0 50px;

@@ -3,6 +3,8 @@
     <nav-bar />
     <about />
     <projects />
+    <contact-me/>
+    <footer-bar/>
   </div>
 </template>
 
@@ -10,13 +12,17 @@
 import NavBar from '../components/NavBar'
 import Projects from '../components/Projects'
 import About from '../components/About'
+import ContactMe from '../components/Contact-Me'
+import FooterBar from '../components/Footer-Bar'
 
 export default {
   name: 'Home',
   components: {
     NavBar,
     Projects,
-    About
+    About,
+    ContactMe,
+    FooterBar
   }
 }
 </script>

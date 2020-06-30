@@ -1,5 +1,5 @@
 <template>
-  <div class="container">
+  <div class="projects">
     <div class="title__projects">
       <h1>
         Projects
@@ -13,12 +13,15 @@
     >
       <div class="project__description">
         <h1 class="project__description__title">
-          <a :href="p.url"> {{ p.title }}</a>
+          <a :href="p.url">{{ p.title }}</a>
         </h1>
         <span>{{ p.content }}</span>
+        <b-taglist  class="tecnologies">
+          <b-tag v-for="t in p.tecnologies" :key="t" type="is-info">{{ t }}</b-tag>
+        </b-taglist>
       </div>
       <div class="project__img__container">
-        <img :src="p.img" class="project__img" alt="" />
+        <img :src="p.img" class="project__img" alt="project" />
       </div>
     </div>
   </div>
@@ -26,6 +29,7 @@
 
 <script>
 import { getProjects } from '../api'
+import dataMock from '../projectsMocks'
 export default {
   name: 'projects',
   data() {
@@ -36,10 +40,9 @@ export default {
   methods: {
     async getProjects() {
       let { data } = await getProjects()
-      console.log(data)
 
       if (!data) {
-        data = []
+        data = dataMock.projects
       }
       let bool = false
       this.projects = data.map(p => {
@@ -71,9 +74,10 @@ hr {
 }
 .project__description__title {
   color: #13152c;
+  font-size: 2em;
 }
-.container {
-  font-family: 'Merriweather', serif;
+.projects {
+  font-family: 'Roboto', serif;
   margin: 50px 90px;
   color: #5e5e5e;
   background-color: #ffffff;
@@ -101,9 +105,12 @@ hr {
 .project__img__container {
   background-color: #f1f1f1;
   border-radius: 5px;
+  padding: 20px;
 }
 .project__img {
-  width: 300px;
-  margin: 30px;
+  width: 400px;
+}
+.tecnologies {
+  margin-top: 20px;
 }
 </style>

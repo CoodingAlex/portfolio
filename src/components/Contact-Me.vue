@@ -35,7 +35,7 @@
         <b-input
           type="textarea"
           minlength="10"
-          maxlength="100"
+          maxlength="1000"
           placeholder="Maxlength automatically counts characters"
           v-model="formData.text"
         >
